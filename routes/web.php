@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EstablecimientoController;
+use App\Http\Controllers\CategoriaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,8 @@ use App\Http\Controllers\EstablecimientoController;
 */
 
 Route::resource('establecimientos', EstablecimientoController::class)->middleware('auth')->except(['show']);
+Route::resource('categorias', CategoriaController::class)->middleware('auth')->except(['show']);
+
 
 Route::get('/', function () {
     return view('welcome');

@@ -9,7 +9,9 @@ class EstablecimientoController extends Controller
 {
     public function index() 
     {
-        return view('establecimientos.index');
+        return view('establecimientos.index', [
+            'establecimientos' => Establecimiento::latest()->paginate()
+            ]);
     }
 
     public function create(Establecimiento $establecimiento)
@@ -27,11 +29,34 @@ class EstablecimientoController extends Controller
             'nombreEstablecimiento' =>   $request->nombreEstablecimiento,
         ]);
 
-        return view('establecimientos.index');
+        return view('establecimientos.index', [
+            'establecimientos' => Establecimiento::latest()->paginate()
+            ]);
     }
 
     public function edit(Establecimiento $establecimiento) 
     {
         return view('establecimientos.edit', ['establecimiento' => $establecimiento]);
     }
+
+    public function update(Request $request, Establecimiento $establecimiento)
+    {
+        $request->validate([
+    		'nombreEstablecimiento' => 'required',
+    	]);
+
+        $establecimiento->update([
+            'nombreEstablecimiento' => $request->nombreEstablecimiento,
+        ]);
+
+        return redirect()->route('establecimientos.index');
+    }
+
+    public function destroy(Establecimiento $establecimiento) 
+    {
+        $establecimiento->delete();
+
+        return back();
+    }
+
 }

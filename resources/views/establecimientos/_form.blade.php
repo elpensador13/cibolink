@@ -6,9 +6,9 @@
     </div>
 </div>
 
-<div>
-<input type="submit" value="Enviar" class="btn btn-danger">
-<a href="{{ route('establecimientos.index') }}" class="btn btn-warning">Volver</a>
+<div class="d-grid gap-2 col-6 mx-auto">
+<input type="submit" value="Enviar" class="btn btn-success">
+<a href="{{ route('establecimientos.index') }}" class="btn btn-danger">Volver</a>
 </div>
 
 

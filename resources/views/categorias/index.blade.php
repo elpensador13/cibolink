@@ -5,17 +5,17 @@
 
 <div class="row justify-content-center">
     <div class="card col-6 text-center">
-        <h5 class="card-header">Mis establecimientos</h5>
+        <h5 class="card-header">Mis categorias</h5>
         <div class="card-body">
             <table class="table">
-                @foreach($establecimientos as $establecimiento)
+                @foreach($categorias as $categoria)
                     <tr>
-                        <td >{{ $establecimiento->nombreEstablecimiento }}</td>
+                        <td >{{ $categoria->nombreCategoria }}</td>
                         <td >
-                            <a class="btn btn-success" href="{{ route('establecimientos.edit', $establecimiento) }}">Editar</a>
+                            <a class="btn btn-success" href="{{ route('categorias.edit', $categoria) }}">Editar</a>
                         </td>
                         <td>
-                            <form action="{{ route('establecimientos.destroy', $establecimiento) }}" method="POST">
+                            <form action="" method="POST">
                                 @csrf 
                                 @method('DELETE')
 
@@ -30,9 +30,11 @@
                     </tr>
                 @endforeach
             </table>
-            <a class="btn btn-secondary btn-lg" href="{{ route('establecimientos.create') }}" >Nuevo establecimiento</a>
+            <a class="btn btn-secondary btn-lg" href="{{ route('categorias.create') }}" >Nueva categoria</a>
         </div>
     </div>
 </div>
+
+
 
 @endsection
