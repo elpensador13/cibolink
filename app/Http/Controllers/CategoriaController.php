@@ -50,4 +50,11 @@ class CategoriaController extends Controller
             'categorias' => Categoria::latest()->paginate(),
             ]);
     }
+
+    public function destroy(Categoria $categoria) 
+    {
+        $categoria->delete();
+
+        return back();
+    }
 } 

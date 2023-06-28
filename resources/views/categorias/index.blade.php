@@ -15,7 +15,7 @@
                             <a class="btn btn-success" href="{{ route('categorias.edit', $categoria) }}">Editar</a>
                         </td>
                         <td>
-                            <form action="" method="POST">
+                            <form action="{{ route('categorias.destroy', $categoria) }}" method="POST">
                                 @csrf 
                                 @method('DELETE')
 
