@@ -28,7 +28,9 @@ class CategoriaController extends Controller
         $categoria = Categoria::create($request->all());
         
 
-        return view('categorias.index');
+        return view('categorias.index', [
+            'categorias' => Categoria::latest()->paginate(),
+            ]);
     }
     
     public function edit(Categoria $categoria) 

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EstablecimientoController;
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\MenuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,7 @@ use App\Http\Controllers\CategoriaController;
 
 Route::resource('establecimientos', EstablecimientoController::class)->middleware('auth')->except(['show']);
 Route::resource('categorias', CategoriaController::class)->middleware('auth')->except(['show']);
+Route::resource('menus', MenuController::class)->middleware('auth')->except(['show']);
 
 
 Route::get('/', function () {
