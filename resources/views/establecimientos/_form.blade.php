@@ -45,7 +45,8 @@
                 <label for="estado" class="col-sm-2 col-form-label">Estado: *</label>
                 <div class="col-sm-10">
                     <select id="estado" class="form-select" name="estado" value="{{ old('estado', $establecimiento->estado)}}">
-</select>
+                        <option value="">Seleccione estado...</option>
+                        <option value="Ciudad de México">Ciudad de México</option>
                 </div>
             </div>
             <div class="row mb-3">
@@ -78,26 +79,31 @@
                     <input type="text" class="form-control" id="sitioWeb" name="sitioWeb" value="{{ old('sitioWeb', $establecimiento->sitioWeb)}}" /> 
                 </div>
             </div>
+            <div class="row mb-3">
             <label for="faceBook" class="col-sm-2 col-form-label">Facebook:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="Facebook" name="faceBook" value="{{ old('faceBook' $establecimiento->faceBook)}}" /> 
+                    <input type="text" class="form-control" id="Facebook" name="faceBook" value="{{ old('faceBook', $establecimiento->faceBook)}}" /> 
                 </div>
             </div>
+            <div class="row mb-3">
             <label for="instagram" class="col-sm-2 col-form-label">Instagram:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="instagram" name="instagram value="{{ old('instagram', $establecimiento->instagram)}}"" /> 
+                    <input type="text" class="form-control" id="instagram" name="instagram" value="{{ old('instagram', $establecimiento->instagram)}}" /> 
                 </div>
             </div>
+            <div class="row mb-3">
             <label for="twitter" class="col-sm-2 col-form-label">Twitter:</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="twitter" name="twitter" value="{{ old('twitter', $establecimiento->twitter)}}" /> 
                 </div>
             </div>
+            <div class="row mb-3">
             <label for="tiktok" class="col-sm-2 col-form-label">Tik Tok:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="tiktok" /> 
+                <input type="text" class="form-control" id="tiktok" name="tiktok" value="{{ old('tiktok', $establecimiento->tiktok)}}" /> 
                 </div>
             </div>
+            <div class="row mb-3">
             <label for="youtube" class="col-sm-2 col-form-label">YouTube:</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="youtube" name="youtube" value="{{ old('youtube', $establecimiento->youtube)}}" /> 
