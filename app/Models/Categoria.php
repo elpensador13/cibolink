@@ -11,6 +11,18 @@ class Categoria extends Model
 
     protected $fillable = [
         'nombreCategoria',
+        'visible',
+            'colorFondoCategoria',
+            'colorFuenteCategoria',
+            'horaInicioCategoria',
+            'horaFinCategoria',
+            'lunesCategoria',
+            'martesCategoria',
+           'miercolesCategoria',
+            'juevesCategoria',
+            'viernesCategoria',
+            'sabadoCategoria',
+            'domingoCategoria'
     ];
     
 }

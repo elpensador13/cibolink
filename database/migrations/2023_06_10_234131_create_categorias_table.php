@@ -13,11 +13,25 @@ return new class extends Migration
     {
         Schema::create('categorias', function (Blueprint $table) {
             $table->id();
-
-            $table->string('nombreCategoria', 100);
-
             $table->timestamps();
+            $table->string('nombreCategoria', 100);
+            $table->boolean('visible');
+            $table->string('colorFondoCategoria', 10);
+            $table->string('colorFuenteCategoria', 10);
+            $table->time('horaInicioCategoria');
+            $table->time('horaFinCategoria');
+            $table->boolean('lunesCategoria');
+            $table->boolean('martesCategoria');
+            $table->boolean('miercolesCategoria');
+            $table->boolean('juevesCategoria');
+            $table->boolean('viernesCategoria');
+            $table->boolean('sabadoCategoria');
+            $table->boolean('domingoCategoria');
+            
+            $table->unsignedBigInteger('userId');
+            $table->foreign('userId')->references('id')->on('users');
         });
+        
     }
 
     /**

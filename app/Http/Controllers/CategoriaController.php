@@ -23,6 +23,18 @@ class CategoriaController extends Controller
     {
         $request->validate([
     		'nombreCategoria' => 'required',
+            'visible' => 'required',
+            'colorFondoCategoria' => 'required',
+            'colorFuenteCategoria' => 'required',
+            'horaInicioCategoria' => 'required',
+            'horaFinCategoria' => 'required',
+            'lunesCategoria' => 'required',
+            'martesCategoria' => 'required',
+           'miercolesCategoria' => 'required',
+            'juevesCategoria' => 'required',
+            'viernesCategoria' => 'required',
+            'sabadoCategoria' => 'required',
+            'domingoCategoria' => 'required'
     	]);
 
         $categoria = Categoria::create($request->all());
@@ -49,5 +61,12 @@ class CategoriaController extends Controller
         return view('categorias.index', [
             'categorias' => Categoria::latest()->paginate(),
             ]);
+    }
+
+    public function destroy(Categoria $categoria) 
+    {
+        $categoria->delete();
+
+        return back();
     }
 } 
