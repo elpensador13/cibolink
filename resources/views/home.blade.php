@@ -5,5 +5,6 @@
     <h1 class="row justify-content-center">Hola {{ Auth::user()->name }} bienvenido.</h1>
     <a class="btn btn-success" href="{{ route('establecimientos.index') }}" >Establecimiento</a>
     <a class="btn btn-success" href="{{ route('categorias.index') }}">Categorias</a>
+    <a class="btn btn-success" href="{{ route('menus.index') }}">Menus</a>
 </div>
 @endsection

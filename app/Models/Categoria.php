@@ -25,4 +25,8 @@ class Categoria extends Model
             'domingoCategoria'
     ];
     
+    public function menus() 
+    {
+        return $this->hasMany(Menu::class);
+    }
 }

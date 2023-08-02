@@ -56,6 +56,7 @@ return new class extends Migration
             $table->time('horaFinDomingoEstablecimiento');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
+
         });
     }
 
