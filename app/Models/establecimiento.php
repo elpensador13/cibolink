@@ -21,7 +21,7 @@ class establecimiento extends Model
         'telefono1',
         'telefono2',
         'encargado',
-        'eMail',
+        'email',
         'sitioWeb',
         'faceBook',
         'instagram',
