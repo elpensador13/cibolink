@@ -2,10 +2,10 @@
 
 @section('content')
 <div>
-    <form action="{{ route('establecimientos.update' , $establecimiento) }}" method="POST">
+    <form action="{{ route('menus.update' , $menu) }}" method="POST">
         
         @method('PUT')
-        @include('establecimientos._form')
+        @include('menus._form')
 
     </form>
 </div>
