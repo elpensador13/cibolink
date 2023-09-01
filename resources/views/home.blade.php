@@ -18,8 +18,8 @@ $establecimientoId = 0;
 
         @if ($establecimientoId)
             <a class="btn btn-success btn-lg" href="{{ route('establecimientos.edit', $establecimientoId) }}">Mi establecimiento</a>
-            <a class="btn btn-success btn-lg" href="{{ route('categorias.index') }}">Categorias</a>
-            <a class="btn btn-success btn-lg" href="{{ route('menus.index', ['establecimientoId' => $establecimientoId]) }}">Menus</a>
+            <a class="btn btn-success btn-lg" href="{{ route('categorias.index' , ['establecimientoId' => $establecimientoId]) }}">Categorias</a>
+            <a class="btn btn-success btn-lg" href="{{ route('menus.index' , ['establecimientoId' => $establecimientoId]) }}">Menus</a>
         @else
             <a class="btn btn-success btn-lg" href="{{ route('establecimientos.create') }}" >Registrar mi establecimiento</a>
             

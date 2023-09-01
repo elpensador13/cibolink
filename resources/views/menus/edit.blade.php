@@ -2,7 +2,7 @@
 
 @section('content')
 <div>
-    <form action="{{ route('menus.update' , $menu) }}" method="POST">
+    <form action="{{ route('menus.update' , $menu) }}" method="POST" enctype="multipart/form-data">
         
         @method('PUT')
         @include('menus._form')

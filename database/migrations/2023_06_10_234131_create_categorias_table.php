@@ -16,6 +16,9 @@ return new class extends Migration
 
             $table->string('nombreCategoria', 100);
 
+            $table->unsignedBigInteger('establecimiento_id');
+            $table->foreign('establecimiento_id')->references('id')->on('establecimientos');
+
             $table->timestamps();
         });
     }

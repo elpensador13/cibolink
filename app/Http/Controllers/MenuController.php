@@ -9,7 +9,7 @@ use App\Models\Categoria;
 
 class MenuController extends Controller
 {
-    public function index(Request $request) 
+    public function index(Request $request)  
     {
         $establecimientoId  = $request->input('establecimientoId');
         return view('menus.index', [
@@ -33,14 +33,22 @@ class MenuController extends Controller
             'descripcionPlatillo' => 'required',
             'precioPlatillo' => 'required',
             'imagenPlatillo1' => 'required',
-            'imagenPlatillo2' => 'required',
+            'imagenPlatillo2' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             'ordenPlatillo' => 'required',
             'visiblePlatillo' => 'required',
             'colorFondoMenu' => 'required',
             'colorFuenteMenu' => 'required',
     	]);
+     
+        if ($request->hasFile('imagenPlatillo2')) {
+            $imagenPath = $request->file('imagenPlatillo2')->store('menus', 'public');
+        } else {
+            $imagenPath = null;
+        }
 
-        $menu = Menu::create($request->all());      
+        $menu = Menu::create($request->all()); 
+        $menu->imagenPlatillo2 = $imagenPath;
+        $menu->save();
 
         return redirect()->route('menus.index');
     }
@@ -60,19 +68,25 @@ class MenuController extends Controller
             'descripcionPlatillo' => 'required',
             'precioPlatillo' => 'required',
             'imagenPlatillo1' => 'required',
-            'imagenPlatillo2' => 'required',
+            'imagenPlatillo2' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             'ordenPlatillo' => 'required',
             'colorFondoMenu' => 'required',
             'colorFuenteMenu' => 'required',
     	]);
 
+        if ($request->hasFile('imagenPlatillo2')) {
+            $imagenPath = $request->file('imagenPlatillo2')->store('menus', 'public');
+        } else {
+            $imagenPath = null;
+        }
+
+        $menu->imagenPlatillo2 = $imagenPath;
         $menu->update([
             'nombrePlatillo' => $request->nombrePlatillo,
             'categoria_id'  => $request->categoria_id,
             'descripcionPlatillo'  => $request->descripcionPlatillo,
             'precioPlatillo'  => $request->precioPlatillo,
             'imagenPlatillo1'  => $request->imagenPlatillo1,
-            'imagenPlatillo2'  => $request->imagenPlatillo2,
             'ordenPlatillo'  => $request->ordenPlatillo,
             'visiblePlatillo'  => $request->visiblePlatillo,
             'colorFondoMenu'  => $request->colorFondoMenu,

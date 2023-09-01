@@ -11,10 +11,16 @@ class Categoria extends Model
 
     protected $fillable = [
         'nombreCategoria',
+        'establecimiento_id'
     ];
     
     public function menus() 
     {
         return $this->hasMany(Menu::class);
+    }
+
+    public function establecimiento()
+    {
+        return $this->belongsTo(establecimiento::class);
     }
 }

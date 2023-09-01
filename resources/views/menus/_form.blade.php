@@ -58,7 +58,7 @@ $numero = Auth::user()->id ;
 <div class="row mb-3">
     <label for="imagenPlatillo2" class="col-sm-4 col-form-label">Imagen 2: </label>
     <div class="col-sm-8">
-        <input type="text" class="form-control" id="imagenPlatillo2" name="imagenPlatillo2" value="{{ old('imagenPlatillo2', $menu->imagenPlatillo2)}}"   /> 
+        <input type="file" class="form-control" id="imagenPlatillo2" name="imagenPlatillo2" value="{{ old('imagenPlatillo2', $menu->imagenPlatillo2)}}"  accept="image/*"  /> 
     </div>
 </div>
 
