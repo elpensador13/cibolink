@@ -6,5 +6,7 @@
     <a class="btn btn-success" href="{{ route('establecimientos.index') }}" >Establecimiento</a>
     <a class="btn btn-success" href="{{ route('categorias.index') }}">Categorias</a>
     <a class="btn btn-success" href="{{ route('menus.index') }}">Menus</a>
+    <a class="btn btn-success" href="{{ route('qr.generateQR',1) }}">QR </a>
+
 </div>
 @endsection
