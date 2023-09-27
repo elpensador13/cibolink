@@ -1,3 +1,5 @@
+import './qr.js';
+    
 import './bootstrap';
 
 import '../sass/app.scss';
