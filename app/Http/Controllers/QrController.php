@@ -12,11 +12,9 @@ class QRController extends Controller
 public function generateQR(Request $request)
 {
     $establecimientoId = $request->input('establecimientoId');
-    $data = [
-        'establecimientoId' => $establecimientoId,
-    ];
+    $data =         'http://127.0.0.1:8000/qr/' .$establecimientoId;
 
-    return view('generateQR', $data);
+    return view('generateQR',['data'=>$data]); 
 }
 }
     

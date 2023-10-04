@@ -1,0 +1,78 @@
+commit 5d094ca656dcc3362fddf7731545ccbac13671e2
+Author: Francisco Fuentes <ffuentes.2023@outlook.com>
+Date:   Thu Sep 28 20:05:22 2023 -0600
+
+    v 28 sep
+
+commit 30d860caf39919c883b585f4b41045c3011af266
+Author: Francisco Fuentes <ffuentes.2023@outlook.com>
+Date:   Tue Sep 26 19:38:48 2023 -0600
+
+    cambios del jueves 21
+
+commit b672bf8072af4349ce98a2bb2de1498e5347b9fb
+Author: Francisco Fuentes <ffuentes.2023@outlook.com>
+Date:   Thu Sep 14 15:08:31 2023 -0600
+
+    versión del 14 ya funciona el enlace
+
+commit 74987e13770c979f64c3cf0fcf071b64d4e8b087
+Author: Francisco Fuentes <ffuentes.2023@outlook.com>
+Date:   Tue Sep 12 13:22:03 2023 -0600
+
+    cambios del 12 sep
+
+commit 499ae1c72118cd5e81e4f423b42e7ef753337a4a
+Author: Francisco Fuentes <ffuentes.2023@outlook.com>
+Date:   Tue Sep 5 21:13:00 2023 -0600
+
+    trabajo con qrs
+
+commit 26e8c1158dceb3be77b581ecfb654c5538516e4e
+Merge: cd6f67f e3b3bba
+Author: sangeles <sangeles@anscom.net>
+Date:   Thu Jul 27 20:42:11 2023 -0600
+
+    Merge branch 'salvador'
+
+commit cd6f67f7d60a8858a5e78c2194c6a15d04184070
+Author: Ivan Lopez <ivan11reza@gmail.com>
+Date:   Tue Jul 25 20:05:03 2023 -0600
+
+    Establecimientos 1
+
+commit e3b3bbaa35e7c3c208eec2cc034325649bc40198
+Author: sangeles <sangeles@anscom.net>
+Date:   Tue Jul 25 19:54:18 2023 -0600
+
+    version 1 de establecimientos
+
+commit ba5b5e57783899870942e2e7699f23e426ffffbd
+Author: sangeles <sangeles@anscom.net>
+Date:   Tue Jul 11 20:29:29 2023 -0600
+
+    Establecimientos completo versión 1
+
+commit 1767649697c330feefbd7878b339f1d3bd30c0b1
+Author: sangeles <sangeles@anscom.net>
+Date:   Tue Jul 11 19:41:47 2023 -0600
+
+    establecimientos parcial
+
+commit 25c6a17a40f000f0a12e76f4fdda8b6f2f15afdd
+Author: Ivan Lopez <ivan11reza@gmail.com>
+Date:   Tue Jun 27 20:23:32 2023 -0600
+
+    3 intento
+
+commit f05062faec49547e6f4219d8f76c1a08b8098cd9
+Author: Ivan Lopez <ivan11reza@gmail.com>
+Date:   Thu Jun 22 20:36:18 2023 -0600
+
+    Segundo intento
+
+commit 58de1b6a16b9e432d7aa57e76636e45a77012563
+Author: Francisco Fuentes <ffuentes.2023@outlook.com>
+Date:   Tue Jun 13 09:37:51 2023 -0600
+
+    iniciamos cibolink
