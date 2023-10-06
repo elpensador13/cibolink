@@ -13,8 +13,8 @@ public function generateQR(Request $request)
 {
     $establecimientoId = $request->input('establecimientoId');
     $data =         'http://127.0.0.1:8000/qr/' .$establecimientoId;
-
-    return view('generateQR',['data'=>$data]); 
+$archivo='qr'.$establecimientoId.'.svg';
+    return view('generateQR',['data'=>$data], ['archivo'=>$archivo]); 
 }
 }
     
