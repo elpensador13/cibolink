@@ -7,9 +7,11 @@ use App\Models\Menu;
 use App\Models\establecimiento;
 use App\Models\Categoria;
 
+use Storage;
+
 class MenuController extends Controller
 {
-    public function index(Request $request)  
+    public function index(Request $request)   
     {
         $establecimientoId  = $request->input('establecimientoId');
         return view('menus.index', [
@@ -19,8 +21,8 @@ class MenuController extends Controller
 
     public function create(Menu $menu)
     {
-        $establecimientos = establecimiento::pluck ('user_id' , 'id');
-        $categoria = Categoria::pluck ('nombreCategoria' , 'id');
+        $establecimientos = establecimiento::pluck ('user_id' , 'id'); 
+        $categoria = Categoria::all ();
         
         return view('menus.create', ['menu' => $menu] , ['establecimientos' => $establecimientos , 'categoria' => $categoria]);
     }
@@ -50,13 +52,13 @@ class MenuController extends Controller
         $menu->imagenPlatillo2 = $imagenPath;
         $menu->save();
 
-        return redirect()->route('menus.index');
+        return redirect()->route('home');
     }
 
     public function edit(Menu $menu) 
     {
         $establecimientos = establecimiento::pluck ('user_id' , 'id');
-        $categoria = Categoria::pluck ('nombreCategoria' , 'id');
+        $categoria = Categoria::all ();
         return view('menus.edit', ['menu' => $menu] , ['establecimientos' => $establecimientos , 'categoria' => $categoria]);
     }
 
@@ -93,13 +95,13 @@ class MenuController extends Controller
             'colorFuenteMenu'  => $request->colorFuenteMenu,
         ]);
 
-        return redirect()->route('menus.index');
+        return redirect()->route('home');
     }
 
     public function destroy(Menu $menu) 
     {
         $menu->delete();
 
-        return back();
+        return redirect()->route('home');
     }
 }

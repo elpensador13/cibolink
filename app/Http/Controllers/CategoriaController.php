@@ -27,14 +27,25 @@ class CategoriaController extends Controller
     {
         $request->validate([
     		'nombreCategoria' => 'required',
+            'establecimiento_id' => 'required',
+            'visible' => 'required',
+            'colorFondoCategoria' => 'required',
+            'colorFuenteCategoria' => 'required',
+            'horaInicioCategoria' => 'required',
+            'horaFinCategoria' => 'required',
+            'lunesCategoria' => 'required',
+            'martesCategoria' => 'required',
+           'miercolesCategoria' => 'required',
+            'juevesCategoria' => 'required',
+            'viernesCategoria' => 'required',
+            'sabadoCategoria' => 'required',
+            'domingoCategoria' => 'required'
     	]);
 
         $categoria = Categoria::create($request->all());
         
 
-        return view('categorias.index', [
-            'categorias' => Categoria::latest()->paginate(),
-            ]);
+        return redirect()->route('home');
     }
     
     public function edit(Categoria $categoria) 
@@ -48,21 +59,45 @@ class CategoriaController extends Controller
     {
         $request->validate([
     		'nombreCategoria' => 'required',
+            'establecimiento_id' => 'required',
+            'visible' => 'required',
+            'colorFondoCategoria' => 'required',
+            'colorFuenteCategoria' => 'required',
+            'horaInicioCategoria' => 'required',
+            'horaFinCategoria' => 'required',
+            'lunesCategoria' => 'required',
+            'martesCategoria' => 'required',
+           'miercolesCategoria' => 'required',
+            'juevesCategoria' => 'required',
+            'viernesCategoria' => 'required',
+            'sabadoCategoria' => 'required',
+            'domingoCategoria' => 'required'
     	]);
 
         $categoria->update([
             'nombreCategoria' => $request->nombreCategoria,
+            'establecimiento_id' => $request->establecimiento_id,
+            'visible' => $request->visible,
+            'colorFondoCategoria' => $request->colorFondoCategoria,
+            'colorFuenteCategoria' => $request->colorFuenteCategoria,
+            'horaInicioCategoria' => $request->horaInicioCategoria,
+            'horaFinCategoria' => $request->horaFinCategoria,
+            'lunesCategoria' => $request->lunesCategoria,
+            'martesCategoria' => $request->martesCategoria,
+            'miercolesCategoria' => $request->miercolesCategoria,
+            'juevesCategoria' => $request->juevesCategoria,
+            'viernesCategoria' => $request->viernesCategoria,
+            'sabadoCategoria' => $request->sabadoCategoria,
+            'domingoCategoria' => $request->domingoCategoria,
         ]);
 
-        return view('categorias.index', [
-            'categorias' => Categoria::latest()->paginate(),
-            ]);
+        return redirect()->route('home');
     }
 
     public function destroy(Categoria $categoria) 
     {
         $categoria->delete();
 
-        return back();
+        return redirect()->route('home');
     }
 } 

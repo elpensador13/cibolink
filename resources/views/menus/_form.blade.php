@@ -16,9 +16,10 @@ $numero = Auth::user()->id ;
     <div class="row mb-3">
     <label for="establecimiento_id" class="col-sm-4 col-form-label">establecimiento id: </label>
         <div class="col-sm-8">
-            <input type="text" class="form-control" id="establecimiento_id" name="establecimiento_id" value="{{ $id}}"   /> 
+            <input type="text" class="form-control" id="establecimiento_id" name="establecimiento_id" value="{{$id}}"   /> 
         </div>
     </div>
+    <?php $establecimiento_id = $id ;?>
     @endif
 @endforeach
 
@@ -27,8 +28,10 @@ $numero = Auth::user()->id ;
     <div class="col-sm-8">
         <select class="form-select" id="categoria_id" name="categoria_id" >
             <option value="{{ old('categoria_id', $menu->categoria_id)}}" >Sin cambios</option>
-            @foreach($categoria  as $id => $nombreCategoria)
-                <option value="{{ $id}}">{{ $nombreCategoria}}</option>
+            @foreach($categoria  as  $categoria)
+                @if ($categoria->establecimiento_id ==  $establecimiento_id )
+                <option value="{{$categoria['id']}} ">{{$categoria['nombreCategoria']}} </option>
+                @endif
             @endforeach
         </select>
     </div>
@@ -72,14 +75,14 @@ $numero = Auth::user()->id ;
 <div class="row mb-3">
     <label for="colorFondoMenu" class="col-sm-4 col-form-label">Color de fondo de menu: </label>
     <div class="col-sm-8">
-        <input type="text" class="form-control" id="colorFondoMenu" name="colorFondoMenu" value="{{ old('colorFondoMenu', $menu->colorFondoMenu)}}"   /> 
+        <input type="color" class="form-control" id="colorFondoMenu" name="colorFondoMenu" value="{{ old('colorFondoMenu', $menu->colorFondoMenu)}}"   /> 
     </div>
 </div>
 
 <div class="row mb-3">
     <label for="colorFuenteMenu" class="col-sm-4 col-form-label">Color de fuente de menu: </label>
     <div class="col-sm-8">
-        <input type="text" class="form-control" id="colorFuenteMenu" name="colorFuenteMenu" value="{{ old('colorFuenteMenu', $menu->colorFuenteMenu)}}"   /> 
+        <input type="color" class="form-control" id="colorFuenteMenu" name="colorFuenteMenu" value="{{ old('colorFuenteMenu', $menu->colorFuenteMenu)}}"   /> 
     </div>
 </div>
 
@@ -91,5 +94,5 @@ $numero = Auth::user()->id ;
 
 <div class="d-grid gap-2 col-6 mx-auto">
 <input type="submit" value="Enviar" class="btn btn-success">
-<a href="{{ route('menus.index') }}" class="btn btn-danger">Volver</a>
+<a href="{{ route('menus.index' , ['establecimientoId' => $id]) }}" class="btn btn-danger">Volver</a>
 </div>

@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\establecimiento;
+use App\Models\Categoria;
+use App\Models\Menu;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class HomeController extends Controller
 {
@@ -24,7 +27,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $establecimientos = establecimiento::pluck ('user_id' , 'id');
-        return view('home', ['establecimientos' => $establecimientos]);
+        $establecimientos = establecimiento::all ();
+        $categorias = Categoria::all ();
+        $menus = Menu::all ();
+        return view('home', ['establecimientos' => $establecimientos, 'categorias' => $categorias, 'menus' => $menus] );
     }
 }

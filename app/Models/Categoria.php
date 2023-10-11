@@ -11,7 +11,19 @@ class Categoria extends Model
 
     protected $fillable = [
         'nombreCategoria',
-        'establecimiento_id'
+        'establecimiento_id' ,
+        'visible',
+        'colorFondoCategoria',
+        'colorFuenteCategoria',
+        'horaInicioCategoria',
+        'horaFinCategoria',
+        'lunesCategoria',
+        'martesCategoria',
+       'miercolesCategoria',
+        'juevesCategoria',
+        'viernesCategoria',
+        'sabadoCategoria',
+        'domingoCategoria'
     ];
     
     public function menus() 
