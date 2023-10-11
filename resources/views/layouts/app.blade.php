@@ -14,6 +14,7 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <script src="{{ asset('js/test.js') }}"></script>
     <!-- Scripts -->
+    <script src="{{ asset('js/qr.js') }}"></script>
     @vite(['resources/js/app.js'])
 </head>
 <body>

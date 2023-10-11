@@ -32,4 +32,5 @@ class HomeController extends Controller
         $menus = Menu::all ();
         return view('home', ['establecimientos' => $establecimientos, 'categorias' => $categorias, 'menus' => $menus] );
     }
+
 }

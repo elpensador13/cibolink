@@ -19,6 +19,7 @@ class MenuController extends Controller
             ]);
     }
 
+
     public function create(Menu $menu)
     {
         $establecimientos = establecimiento::pluck ('user_id' , 'id'); 
