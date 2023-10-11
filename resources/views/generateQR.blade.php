@@ -11,6 +11,7 @@
                 {!! QrCode:: size(300)->backgroundColor(255,90,0)->generate($data, '../public/qrcodes/'.$archivo) !!}
                 {!! QrCode::generate($data); !!}
                 <p>Escanee el código QR para acceder al enlace.</p>
+                <a href="{{ asset('qrcodes/qr' .$archivo) }}" download>Descargar qr1.svg</a>
             </div>
         </div>    </div>
 @endsection
