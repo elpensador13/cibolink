@@ -21,34 +21,29 @@ class EstablecimientoController extends Controller
 
     public function store(Request $request) 
     {
-        $validData = $request->validate(
-            ['nombreEstablecimiento' => 'required'],
-            ['nombreEstablecimiento.required' => 'El campo NOMBRE DEL ESTABLECIMIENTO es requerido'],
-            ['slogan' => 'required'],
-            ['slogan.required' => 'El campo SLOGAN es requerido'],
-            ['logo' => 'required'],
-            ['logo.required' => 'El campo NOMBRE DEL ESTABLECIMIENTO es requerido'],
-            ['calleNumero' => 'required'],
-            ['calleNumero.required' => 'El campo NOMBRE DEL ESTABLECIMIENTO es requerido'],
-            ['colonia' => 'required'],
-            ['colonia.required' => 'El campo NOMBRE DEL ESTABLECIMIENTO es requerido'],
-            ['municipio' => 'required'],
-            ['municipio.required' => 'El campo MUNICIPIO O ALCALDÍA es requerido'],
-            ['cp' => 'required'],
-            ['cp.required' => 'El campo CÓDIGO POSTAL es requerido'],
-            ['telefono1' => 'required'],
-            ['telefono1.required' => 'El campo TELÉFONO 1 es requerido'],
-            ['encargado' => 'required'],
-            ['encargado.required' => 'El campo NOMBRE DEL ENCARGADO es requerido'],
-            ['email' => 'required'],
-            ['email.required' => 'El campo CORREO ELECTRÓNICO DEL ENCARGADO es requerido']);
-  
+        $request->validate([
+            'nombreEstablecimiento' => 'required',
+                        'slogan' => 'required',
+                        'logo' => 'image|mimes:jpeg,png,jpg,gif|max:2048', 
+                        'calleNumero' => 'required',
+                        'colonia' => 'required',
+                        'municipio' => 'required',
+                        'cp' => 'required',
+                        'telefono1' => 'required',
+                        'encargado' => 'required',
+                        'email' => 'required',
+        ]);              
 
+        if ($request->hasFile('logo')) {
+            $imagenPath = $request->file('logo')->store('establecimientos', 'public');
+        } else {
+            $imagenPath = null;
+        }
 
         $establecimiento = $request->user()->establecimientos()->create([
             'nombreEstablecimiento' =>   $request->nombreEstablecimiento,
                         'slogan' =>   $request->slogan,
-            'logo' =>   $request->logo,
+            'logo' => $imagenPath,
             'calleNumero' =>   $request->calleNumero,
             'colonia' =>   $request->colonia,
             'municipio' =>   $request->municipio,
@@ -86,12 +81,11 @@ class EstablecimientoController extends Controller
             'domingoEstablecimiento' =>   $request->domingoEstablecimiento,
             'horaInicioDomingoEstablecimiento' =>   $request->horaInicioDomingoEstablecimiento,
             'horaFinDomingoEstablecimiento' =>   $request->horaFinDomingoEstablecimiento,
-    
+   
         ]);
 
-        return view('establecimientos.index', [
-            'establecimientos' => Establecimiento::latest()->paginate()
-            ]);
+        return redirect() -> route('establecimientos.index');
+            
     }
 
     public function edit(Establecimiento $establecimiento) 
@@ -101,36 +95,29 @@ class EstablecimientoController extends Controller
 
     public function update(Request $request, Establecimiento $establecimiento)
     {
-        $validData = $request->validate(
-            ['nombreEstablecimiento' => 'required'],
-            ['nombreEstablecimiento.required' => 'El campo NOMBRE DEL ESTABLECIMIENTO es requerido'],
-            ['slogan' => 'required'],
-            ['slogan.required' => 'El campo SLOGAN es requerido'],
-            ['logo' => 'required'],
-            ['logo.required' => 'El campo NOMBRE DEL ESTABLECIMIENTO es requerido'],
-            ['calleNumero' => 'required'],
-            ['calleNumero.required' => 'El campo NOMBRE DEL ESTABLECIMIENTO es requerido'],
-            ['colonia' => 'required'],
-            ['colonia.required' => 'El campo NOMBRE DEL ESTABLECIMIENTO es requerido'],
-            ['municipio' => 'required'],
-            ['municipio.required' => 'El campo MUNICIPIO O ALCALDÍA es requerido'],
-            ['cp' => 'required'],
-            ['cp.required' => 'El campo CÓDIGO POSTAL es requerido'],
-            ['telefono1' => 'required'],
-            ['telefono1.required' => 'El campo TELÉFONO 1 es requerido'],
-            ['encargado' => 'required'],
-            ['encargado.required' => 'El campo NOMBRE DEL ENCARGADO es requerido'],
-            ['email' => 'required'],
-            ['email.required' => 'El campo CORREO ELECTRÓNICO DEL ENCARGADO es requerido']);
-  
-	
+        $request->validate([
+            'nombreEstablecimiento' => 'required',
+                        'slogan' => 'required',
+                        'logo' => 'image|mimes:jpeg,png,jpg,gif|max:2048', 
+                        'calleNumero' => 'required',
+                        'colonia' => 'required',
+                        'municipio' => 'required',
+                        'cp' => 'required',
+                        'telefono1' => 'required',
+                        'encargado' => 'required',
+                        'email' => 'required',
+        ]);              
 
-    	
+        if ($request->hasFile('logo')) {
+            $imagenPath = $request->file('logo')->store('establecimientos', 'public');
+        } else {
+            $imagenPath = null;
+        }
 
-        $establecimiento->update([
-            'nombreEstablecimiento' => $request->nombreEstablecimiento,
-            'slogan' =>   $request->slogan,
-            'logo' =>   $request->logo,
+                $establecimiento->update([
+            'nombreEstablecimiento' =>   $request->nombreEstablecimiento,
+                        'slogan' =>   $request->slogan,
+            'logo' => $imagenPath,
             'calleNumero' =>   $request->calleNumero,
             'colonia' =>   $request->colonia,
             'municipio' =>   $request->municipio,
@@ -146,18 +133,19 @@ class EstablecimientoController extends Controller
             'twitter' =>   $request->twitter,
             'tikTok' =>   $request->tikTok,
             'youtube' =>   $request->youtube,
-                        'lunesEstablecimiento' =>   $request->lunesEstablecimiento,
+            'status' =>   "Activo",
+            'lunesEstablecimiento' =>   $request->lunesEstablecimiento,
             'horaInicioLunesEstablecimiento' =>   $request->horaInicioLunesEstablecimiento,
             'horaFinLunesEstablecimiento' =>   $request->horaFinLunesEstablecimiento,
             'martesEstablecimiento' =>   $request->martesEstablecimiento,
             'horaInicioMartesEstablecimiento' =>   $request->horaInicioMartesEstablecimiento,
-            'horaFinMartesEstablecimiento' =>   $request->horaFinMartesEstablecimiento,
+            'horaFinMartesEstablecimiento' =>   $request->horaFinMartesEstablecimiento,            
             'miercolesEstablecimiento' =>   $request->miercolesEstablecimiento,
             'horaInicioMiercolesEstablecimiento' =>   $request->horaInicioMiercolesEstablecimiento,
-            'horaFinMiercolesEstablecimiento' =>   $request->horaFinMiercolesEstablecimiento,
+            'horaFinMiercolesEstablecimiento' =>   $request->horaFinMiercolesEstablecimiento,        
             'juevesEstablecimiento' =>   $request->juevesEstablecimiento,
             'horaInicioJuevesEstablecimiento' =>   $request->horaInicioJuevesEstablecimiento,
-            'horaFinJuevesEstablecimiento' =>   $request->horaFinJuevesEstablecimiento,
+            'horaFinJuevesEstablecimiento' => $request -> horaFinJuevesEstablecimiento,
             'viernesEstablecimiento' =>   $request->viernesEstablecimiento,
             'horaInicioViernesEstablecimiento' =>   $request->horaInicioViernesEstablecimiento,
             'horaFinViernesEstablecimiento' =>   $request->horaFinViernesEstablecimiento,
@@ -166,11 +154,10 @@ class EstablecimientoController extends Controller
             'horaFinSabadoEstablecimiento' =>   $request->horaFinSabadoEstablecimiento,
             'domingoEstablecimiento' =>   $request->domingoEstablecimiento,
             'horaInicioDomingoEstablecimiento' =>   $request->horaInicioDomingoEstablecimiento,
-            'horaFinDomingoEstablecimiento' =>   $request->horaFinDomingoEstablecimiento,
-            ]);
-
-        return redirect()->route('establecimientos.index');
-    }
+            'horaFinDomingoEstablecimiento' =>   $request->horaFinDomingoEstablecimiento,            
+                ]);
+                return redirect() -> route('establecimientos.index');
+                                 }
 
     public function destroy(Establecimiento $establecimiento) 
     {
@@ -178,5 +165,4 @@ class EstablecimientoController extends Controller
 
         return back();
     }
-
 }

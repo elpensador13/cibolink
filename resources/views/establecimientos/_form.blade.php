@@ -121,8 +121,11 @@
 <tbody>
 <tr>
     <td>
-    <input class="form-check-input" type="checkbox" id="lunesEstablecimiento" name="lunesEstablecimiento" value="{{ old('lunesEstablecimiento', $establecimiento->lunesEstablecimiento)}}">
-        <label class="form-check-label" for="lunesEstablecimiento">Lunes</label>
+    <div class="form-check form-switch">
+    <input type="hidden" name="lunesEstablecimiento" value="0">
+    <input type="checkbox" class="form-check-input" id="lunesEstablecimiento" name="lunesEstablecimiento" value="1"  {{old('lunesEstablecimiento', $establecimiento ->lunesEstablecimiento) == 1 ? 'checked' : ''}} /> 
+    <label for="lunesEstablecimiento" class="col-sm-4 form-check-label">Abierto en lunes</label>
+</div>
 </td>
 <td>
     <input type="time" class="form-control" id="horaInicioLunesEstablecimiento" name="horaInicioLunesEstablecimiento" value="{{ old('HoraInicioLunesEstablecimiento', $establecimiento->horaInicioLunesEstablecimiento)}}" />
@@ -133,9 +136,12 @@
 </tr>
 <tr>
     <td>
-    <input class="form-check-input" type="checkbox" id="martesEstablecimiento" name="martesEstablecimiento" value="{{ old('martesEstablecimiento', $establecimiento->martesEstablecimiento)}}">
-        <label class="form-check-label" for="martesEstablecimiento">Martes</label>
-</td>
+    <div class="form-check form-switch">
+    <input type="hidden" name="martesEstablecimiento" value="0">
+    <input type="checkbox" class="form-check-input" id="martesEstablecimiento" name="martesEstablecimiento" value="1"  {{old('martesEstablecimiento', $establecimiento ->martesEstablecimiento) == 1 ? 'checked' : ''}} /> 
+    <label for="martesEstablecimiento" class="col-sm-4 form-check-label">Abierto en martes</label>
+</div>
+      </td>
 <td>
     <input type="time" class="form-control" id="horaInicioMartesEstablecimiento" name="horaInicioMartesEstablecimiento" value="{{ old('HoraInicioMartesEstablecimiento', $establecimiento->horaInicioMartesEstablecimiento)}}" />
 </td>
@@ -145,8 +151,11 @@
 </tr>
 <tr>
     <td>
-    <input class="form-check-input" type="checkbox" id="miercolesEstablecimiento" name="miercolesEstablecimiento" value="{{ old('miercolesEstablecimiento', $establecimiento->miercolesEstablecimiento)}}">
-        <label class="form-check-label" for="miercolesEstablecimiento">Miercoles</label>
+    <div class="form-check form-switch">
+    <input type="hidden" name="miercolesEstablecimiento" value="0">
+    <input type="checkbox" class="form-check-input" id="miercolesEstablecimiento" name="miercolesEstablecimiento" value="1"  {{old('miercolesEstablecimiento', $establecimiento ->miercolesEstablecimiento) == 1 ? 'checked' : ''}} /> 
+    <label for="miercolesEstablecimiento" class="col-sm-4 form-check-label">Abierto en miércoles</label>
+</div>
 </td>
 <td>
     <input type="time" class="form-control" id="horaInicioMiercolesEstablecimiento" name="horaInicioMiercolesEstablecimiento" value="{{ old('HoraInicioMiercolesEstablecimiento', $establecimiento->horaInicioMiercolesEstablecimiento)}}" />
@@ -157,8 +166,12 @@
 </tr>
 <tr>
     <td>
-    <input class="form-check-input" type="checkbox" id="juevesEstablecimiento" name="juevesEstablecimiento" value="{{ old('juevesEstablecimiento', $establecimiento->juevesEstablecimiento)}}">
-        <label class="form-check-label" for="juevesEstablecimiento">Jueves</label>
+    <div class="form-check form-switch">
+    <input type="hidden" name="juevesEstablecimiento" value="0">
+    <input type="checkbox" class="form-check-input" id="juevesEstablecimiento" name="juevesEstablecimiento" value="1"  {{old('juevesEstablecimiento', $establecimiento ->juevesEstablecimiento) == 1 ? 'checked' : ''}} /> 
+    <label for="juevesEstablecimiento" class="col-sm-4 form-check-label">Abierto en jueves</label>
+</div>
+        
 </td>
 <td>
     <input type="time" class="form-control" id="horaInicioJuevesEstablecimiento" name="horaInicioJuevesEstablecimiento" value="{{ old('HoraInicioJuevesEstablecimiento', $establecimiento->horaInicioJuevesEstablecimiento)}}" />
@@ -169,9 +182,12 @@
 </tr>
 <tr>
     <td>
-    <input class="form-check-input" type="checkbox" id="viernesEstablecimiento" name="viernesEstablecimiento" value="{{ old('viernesEstablecimiento', $establecimiento->viernesEstablecimiento)}}">
-        <label class="form-check-label" for="viernesEstablecimiento">Viernes</label>
-</td>
+    <div class="form-check form-switch">
+    <input type="hidden" name="viernesEstablecimiento" value="0">
+    <input type="checkbox" class="form-check-input" id="viernesEstablecimiento" name="viernesEstablecimiento" value="1"  {{old('viernesEstablecimiento', $establecimiento ->viernesEstablecimiento) == 1 ? 'checked' : ''}} /> 
+    <label for="viernesEstablecimiento" class="col-sm-4 form-check-label">Abierto en viernes</label>
+</div>
+    </td>
 <td>
     <input type="time" class="form-control" id="horaInicioViernesEstablecimiento" name="horaInicioViernesEstablecimiento" value="{{ old('HoraInicioViernesEstablecimiento', $establecimiento->horaInicioViernesEstablecimiento)}}" />
 </td>
@@ -181,9 +197,12 @@
 </tr>
 <tr>
     <td>
-    <input class="form-check-input" type="checkbox" id="sabadoEstablecimiento" name="sabadoEstablecimiento" value="{{ old('sabadoEstablecimiento', $establecimiento->sabadoEstablecimiento)}}">
-        <label class="form-check-label" for="sabadoEstablecimiento">Sabado</label>
-</td>
+    <div class="form-check form-switch">
+    <input type="hidden" name="sabadoEstablecimiento" value="0">
+    <input type="checkbox" class="form-check-input" id="sabadoEstablecimiento" name="sabadoEstablecimiento" value="1"  {{old('sabadoEstablecimiento', $establecimiento ->sabadoEstablecimiento) == 1 ? 'checked' : ''}} /> 
+    <label for="sabadoEstablecimiento" class="col-sm-4 form-check-label">Abierto en sábado</label>
+</div>
+    </td>
 <td>
     <input type="time" class="form-control" id="horaInicioSabadoEstablecimiento" name="horaInicioSabadoEstablecimiento" value="{{ old('HoraInicioSabadoEstablecimiento', $establecimiento->horaInicioSabadoEstablecimiento)}}" />
 </td>
@@ -193,9 +212,12 @@
 </tr>
 <tr>
     <td>
-    <input class="form-check-input" type="checkbox" id="domingoEstablecimiento" name="domingoEstablecimiento" value="{{ old('domingoEstablecimiento', $establecimiento->domingoEstablecimiento)}}">
-        <label class="form-check-label" for="domingoEstablecimiento">Domingo</label>
-</td>
+    <div class="form-check form-switch">
+    <input type="hidden" name="domingoEstablecimiento" value="0">
+    <input type="checkbox" class="form-check-input" id="domingoEstablecimiento" name="domingoEstablecimiento" value="1"  {{old('domingoEstablecimiento', $establecimiento ->domingoEstablecimiento) == 1 ? 'checked' : ''}} /> 
+    <label for="domingoEstablecimiento" class="col-sm-4 form-check-label">Abierto en domingo</label>
+</div>
+        </td>
 <td>
     <input type="time" class="form-control" id="horaInicioDomingoEstablecimiento" name="horaInicioDomingoEstablecimiento" value="{{ old('HoraInicioDomingoEstablecimiento', $establecimiento->horaInicioDomingoEstablecimiento)}}" />
 </td>

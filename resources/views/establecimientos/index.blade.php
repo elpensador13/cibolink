@@ -2,6 +2,7 @@
 
 @section('content')
 <h1 class="row justify-content-center">Hola {{ Auth::user()->name }} bienvenido.</h1>
+<button id="b1">prueba</button>
 
 <div class="row justify-content-center">
     <div class="card col-6 text-center">
