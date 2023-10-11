@@ -21,6 +21,15 @@ return new class extends Migration
             $table->unsignedBigInteger('categoria_id');
             $table->foreign('categoria_id')->references('id')->on('categorias');
 
+            $table->string('descripcionPlatillo');
+            $table->string('precioPlatillo', 8, 2);
+            $table->string('imagenPlatillo1', 250);
+            $table->string('imagenPlatillo2', 250);
+            $table->string('ordenPlatillo', 250);
+            $table->boolean('visiblePlatillo')->nullable();
+            $table->string('colorFondoMenu', 10);
+            $table->string('colorFuenteMenu', 10);
+
             $table->timestamps();
         });
     }

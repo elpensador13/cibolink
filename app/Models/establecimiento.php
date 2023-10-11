@@ -50,10 +50,6 @@ class establecimiento extends Model
         'domingoEstablecimiento',
         'horaInicioDomingoEstablecimiento',
         'horaFinDomingoEstablecimiento',
-
-
-
-
     ];
 
     public function user()
@@ -64,5 +60,10 @@ class establecimiento extends Model
     public function menus() 
     {
         return $this->hasMany(Menu::class);
+    }
+
+    public function categorias() 
+    {
+        return $this->hasMany(Categoria::class);
     }
 }
