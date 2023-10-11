@@ -15,7 +15,7 @@
                             <a class="btn btn-success" href="{{ route('menus.edit', $menu) }}">Editar</a>
                         </td>
                         <td>
-                            <form action="" method="POST">
+                            <form action="{{ route('menus.destroy', $menu) }}" method="POST">
                                 @csrf 
                                 @method('DELETE')
 
