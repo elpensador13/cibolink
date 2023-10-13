@@ -26,4 +26,6 @@ $establecimientoId = 0;
             <a class="btn btn-success btn-lg" href="{{ route('establecimientos.create') }}" >Registrar mi establecimiento</a>
 </div>            
         @endif
+
+        @include('mimenu')
 @endsection
