@@ -13,6 +13,14 @@ class Menu extends Model
         'nombrePlatillo',
         'establecimiento_id',
         'categoria_id' ,
+        'descripcionPlatillo' ,
+        'precioPlatillo' ,
+        'imagenPlatillo1' ,
+        'imagenPlatillo2' ,
+        'ordenPlatillo' ,
+        'visiblePlatillo' ,
+        'colorFondoMenu' ,
+        'colorFuenteMenu' ,
     ];
 
     public function establecimiento()

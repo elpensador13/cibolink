@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EstablecimientoController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\QrController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +17,7 @@ use App\Http\Controllers\MenuController;
 |
 */
 
-Route::resource('establecimientos', EstablecimientoController::class)->middleware('auth')->except(['show']);
-Route::resource('categorias', CategoriaController::class)->middleware('auth')->except(['show']);
-Route::resource('menus', MenuController::class)->middleware('auth')->except(['show']);
+
 
 
 Route::get('/', function () {
@@ -27,4 +26,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/qr', [App\Http\Controllers\QrController::class, 'generateQR'])->name('qr');
+Route::resource('establecimientos', EstablecimientoController::class)->middleware('auth')->except(['show']);
+Route::resource('categorias', CategoriaController::class)->middleware('auth')->except(['show']);
+Route::resource('menus', MenuController::class)->middleware('auth')->except(['show']); 
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home'); 

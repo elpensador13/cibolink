@@ -11,22 +11,28 @@ class Categoria extends Model
 
     protected $fillable = [
         'nombreCategoria',
+        'establecimiento_id' ,
         'visible',
-            'colorFondoCategoria',
-            'colorFuenteCategoria',
-            'horaInicioCategoria',
-            'horaFinCategoria',
-            'lunesCategoria',
-            'martesCategoria',
-           'miercolesCategoria',
-            'juevesCategoria',
-            'viernesCategoria',
-            'sabadoCategoria',
-            'domingoCategoria'
+        'colorFondoCategoria',
+        'colorFuenteCategoria',
+        'horaInicioCategoria',
+        'horaFinCategoria',
+        'lunesCategoria',
+        'martesCategoria',
+       'miercolesCategoria',
+        'juevesCategoria',
+        'viernesCategoria',
+        'sabadoCategoria',
+        'domingoCategoria'
     ];
     
     public function menus() 
     {
         return $this->hasMany(Menu::class);
+    }
+
+    public function establecimiento()
+    {
+        return $this->belongsTo(establecimiento::class);
     }
 }
