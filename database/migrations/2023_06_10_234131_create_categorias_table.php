@@ -32,8 +32,8 @@ return new class extends Migration
             $table->boolean('sabadoCategoria')->nullable();
             $table->boolean('domingoCategoria')->nullable();
 
-            $table->timestamps();
         });
+        
     }
 
     /**

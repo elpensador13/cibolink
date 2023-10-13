@@ -27,19 +27,19 @@ class CategoriaController extends Controller
     {
         $request->validate([
     		'nombreCategoria' => 'required',
-            'establecimiento_id' => 'required',
-            'visible' => 'required',
-            'colorFondoCategoria' => 'required',
-            'colorFuenteCategoria' => 'required',
-            'horaInicioCategoria' => 'required',
-            'horaFinCategoria' => 'required',
-            'lunesCategoria' => 'required',
-            'martesCategoria' => 'required',
-           'miercolesCategoria' => 'required',
-            'juevesCategoria' => 'required',
-            'viernesCategoria' => 'required',
-            'sabadoCategoria' => 'required',
-            'domingoCategoria' => 'required'
+        'establecimiento_id' => 'required',
+        'visible' => 'required',
+        'colorFondoCategoria' => 'required',
+        'colorFuenteCategoria' => 'required',
+        'horaInicioCategoria' => 'required',
+        'horaFinCategoria' => 'required',
+        'lunesCategoria' => 'required',
+        'martesCategoria' => 'required',
+        'miercolesCategoria' => 'required',
+        'juevesCategoria' => 'required',
+        'viernesCategoria' => 'required',
+        'sabadoCategoria' => 'required',
+        'domingoCategoria' => 'required'
     	]);
 
         $categoria = Categoria::create($request->all());
